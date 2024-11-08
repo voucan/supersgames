@@ -7,7 +7,7 @@
     <link rel="icon" href="https://cdn.discordapp.com/avatars/735208347011383328/f92b7d6f1d7aed675ccb91d456ffecd0.webp?size=4096" type="image/png">
     <style>
         body {
-            background: url('https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/7/f/3/7f3ab11ae38410b5ef9349a731c9b76173aecd4a.jpeg') repeat center center fixed;
+            background-color: black;
             background-size: 100%;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -101,24 +101,20 @@
         <div class="logo-text">
             <img src="https://cdn.discordapp.com/avatars/735208347011383328/f92b7d6f1d7aed675ccb91d456ffecd0.webp?size=4096" alt="Logo">
             <a href="/games">Super Boots - Games</a>
-        </div></script>
+        </div>
         <div class="nav-buttons">
-        <a href="">👤 About Me</a>
-        <a href="games">🕹️ Games</a>
-</script>
+            <a href="">👤 About Me</a>
+            <a href="games">🕹️ Games</a>
         </div>
     </div>
 
     <div class="game-title">My Games</div>
-    <div class="games-title"></div> 
 
     <div class="game-grid" id="gameGrid">
         <div class="game-button">
             <a href="https://www.roblox.com/games/16143464098/TIME-fight-gaem">
                 <img src="https://t3.rbxcdn.com/180DAY-2777784aacb2c1c282c6b8455d4bd885" alt="fight gaem">
                 <div class="overlay-text">fight gaem</div>
-            </a>
-        </div>
             </a>
         </div>
     </div>
@@ -128,25 +124,14 @@
             const gameGrid = document.getElementById('gameGrid');
             const buttons = document.querySelectorAll('.game-button');
             const pageWidth = window.innerWidth;
-            
             buttons.forEach(button => {
                 const rect = button.getBoundingClientRect();
                 const distanceToRightEdge = pageWidth - rect.right;
-                
-             
-                if (distanceToRightEdge < 75) {
-                    button.style.clear = 'both';
-                } else {
-                    button.style.clear = 'none';
-                }
+                button.style.clear = distanceToRightEdge < 75 ? 'both' : 'none';
             });
         }
-
-    
         window.addEventListener('resize', checkGridAlignment);
         window.addEventListener('load', checkGridAlignment);
     </script>
-    <script type="text/javascript" src="/settings/settings.js"></script>
-
 </body>
 </html>
